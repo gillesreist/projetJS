@@ -2,36 +2,62 @@ body {
     width: 100%;
     margin: 0;
     font-family: "Montserrat", "Montserrat-fallback", Arial, sans-serif;
-    background-color: black;
-    color: white;
+    background-color: #070A32;
+    color: black;
+}
+
+header {
+    background-color: #CED1DA;
+}
+
+footer {
+    background-color: #CED1DA;
 }
 
 .header_container {
-    background-color: aqua;
     margin: auto;
     height: 150px;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer_container {
-    background-color: aqua;
     margin: auto;
     position: relative;
+    padding: 10px;
+}
+
+.reseaux {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.footer_text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.mentions {
+    text-align: center;
 }
 
 .site_name_container {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 40%;
+    font-size: 45px;
+    font-weight: bold;
 
 }
 
 main {
-    background-color: blue;
+    background-color: #2B2E63;
     margin: auto;
-    padding-bottom: 20px;
-  
+    padding: 0px 15px 20px 15px;
+    color: white;
 
 
 }
@@ -54,26 +80,35 @@ h1 {
 }
 
 article {
-    background-color: blueviolet;
+    border: solid;
+    border-radius: 35px;
+    border-color: #E28D0C;
+    border-width: 5px;
+    background-color: #CED1DA;
     padding: 0px 20px 0px 20px;;
     margin: 20px;
     max-width: 400px;
+    color: black;
     
 }
 
 .article_bandeau {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between; 
 }
 
 .article_bandeau_info {
-    margin-left: auto;
     padding-left: 15px;
     max-width: 30%;
 }
 
 .content {
-    background-color: brown;
+    border-top: solid;
+    border-color: #E28D0C;
+    border-width: 5px;
+    width: 100%;
 }
 
 /* media querie pour mobile */
