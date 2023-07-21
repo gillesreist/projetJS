@@ -22,7 +22,7 @@ function getPosts() {
             replaceContent(clone, "content", result[i].body);
             replaceContent(clone, "author", result[i].userId);
             replaceContent(clone, "post_id", result[i].id);
-            elem.after(clone);
+            elem.parentNode.lastChild.after(clone);
         }
     
         elem.remove();
@@ -35,6 +35,6 @@ function getPosts() {
 
 }
 
-window.onload = getPosts();
+window.onload = getPosts
 
 
