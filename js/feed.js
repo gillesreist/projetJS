@@ -1,11 +1,11 @@
 function replaceContent(element, className, newContent) {
-    var targetDiv = element.getElementsByClassName(className)[0];
+    let targetDiv = element.getElementsByClassName(className)[0];
     targetDiv.textContent=newContent;
 }
 
-function getPosts() {
+function getLast10Posts(url) {
 
-    fetch('https://jsonplaceholder.typicode.com/posts').then((response) => {
+    fetch(url).then((response) => {
         if(response.ok) {
             return response.json();
         } else {
@@ -13,21 +13,31 @@ function getPosts() {
         }
     })
       .then((result) =>  {
-        var elem = document.querySelector('.feed');
+        
+        let articles = document.querySelector('.articles');
+        let firstArticle = document.querySelector('.feed');
+        let lastId = document.querySelector('.post_id');
+
+        let newArticlesNumber = result.length - lastId.textContent;
+
+        if (newArticlesNumber > 0) {
+
+           while(articles.childElementCount>1){
+                articles.removeChild(articles.lastElementChild);
+            }
     
-        for (let i = 0; i < 10; i++) {
-    
-            var clone = elem.cloneNode(true);
-            replaceContent(clone, "title", result[i].title);
-            replaceContent(clone, "content", result[i].body);
-            replaceContent(clone, "author", result[i].userId);
-            replaceContent(clone, "post_id", result[i].id);
-            elem.parentNode.lastChild.after(clone);
+            for (let i = result.length-10; i < result.length; i++) {
+        
+                let clone = firstArticle.cloneNode(true);
+                replaceContent(clone, "title", result[i].title);
+                replaceContent(clone, "content", result[i].body);
+                replaceContent(clone, "author", result[i].userId);
+                replaceContent(clone, "post_id", result[i].id);
+                firstArticle.after(clone);
+            }
+
+            firstArticle.remove();
         }
-    
-        elem.remove();
-    
-    
       })
       .catch((error) =>
         console.log('Il y a eu un problème avec l\'opération fetch : ' + error.message)
@@ -35,6 +45,11 @@ function getPosts() {
 
 }
 
-window.onload = getPosts
+let feedUrl = 'https://jsonplaceholder.typicode.com/posts';
 
+window.onload = getLast10Posts(feedUrl);
+
+
+let button = document.querySelector('.getArticles');
+button.addEventListener('click', getLast10Posts(feedUrl), false);
 
