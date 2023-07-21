@@ -1,6 +1,10 @@
 const header = document.createElement('header');
 header.innerHTML = `
-        <p>LESUPERSITE</p>
+        <div class="header_container">
+                <div class="site_name_container">
+                        <p>LESUPERSITE</p>
+                </div>
+        </di>
 `;
 document.body.prepend(header);
 

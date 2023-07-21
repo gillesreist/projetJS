@@ -1,0 +1,167 @@
+body {
+    width: 100%;
+    margin: 0;
+    font-family: "Montserrat", "Montserrat-fallback", Arial, sans-serif;
+    background-color: #070A32;
+    color: black;
+}
+
+header {
+    background-color: #CED1DA;
+}
+
+footer {
+    background-color: #CED1DA;
+}
+
+.header_container {
+    margin: auto;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_container {
+    margin: auto;
+    position: relative;
+    padding: 10px;
+}
+
+.reseaux {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.footer_text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.mentions {
+    text-align: center;
+}
+
+.site_name_container {
+    font-size: 45px;
+    font-weight: bold;
+
+}
+
+main {
+    background-color: #2B2E63;
+    margin: auto;
+    padding: 0px 15px 20px 15px;
+    color: white;
+
+
+}
+
+h1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    
+}
+
+article {
+    border: solid;
+    border-radius: 35px;
+    border-color: #E28D0C;
+    border-width: 5px;
+    background-color: #CED1DA;
+    padding: 0px 20px 0px 20px;;
+    margin: 20px;
+    max-width: 400px;
+    color: black;
+    
+}
+
+.article_bandeau {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.article_bandeau_info {
+    padding-left: 15px;
+    max-width: 30%;
+}
+
+.content {
+    border-top: solid;
+    border-color: #E28D0C;
+    border-width: 5px;
+    width: 100%;
+}
+
+/* media querie pour mobile */
+@media screen and (min-width : 768px) and (max-width: 1930px){
+    main {
+
+        max-width: 1080px;
+
+    }
+
+    .header_container {
+        max-width: 1080px;
+    }
+
+    .footer_container {
+        max-width: 1080px;
+    }
+
+}
+
+/* media querie pour écran standard */
+@media screen and (min-width: 1930px) and (max-width: 2700px) {
+
+    main {
+
+        max-width: 1680px;
+
+    }
+
+    .header_container {
+        max-width: 1680px;
+    }
+
+    .footer_container {
+        max-width: 1080px;
+    }
+
+}
+
+/* media querie pour les écran ultrawide */
+@media screen and (min-width: 2700px) {
+
+    main {
+
+        max-width: 2560px;
+
+    }
+
+    .header_container {
+        max-width: 2560px;
+    }
+
+    .footer_container {
+        max-width: 1080px;
+    }
+}
