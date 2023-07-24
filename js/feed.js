@@ -51,7 +51,6 @@ function getLast10Posts(url) {
 
 }
 
-
 function publishPost() {
   let firstArticle = document.querySelector('.feed');
 
@@ -63,14 +62,9 @@ function publishPost() {
   }
 
   createPost(firstArticle, newArticle);
-
-  console.log(firstArticle.parentElement.lastElementChild);
-
-  firstArticle.parentElement.lastChild.remove();
+  firstArticle.parentElement.lastElementChild.remove();
 
 }
-
-
 
 window.addEventListener("DOMContentLoaded", (event) => {
 
