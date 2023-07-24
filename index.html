@@ -15,6 +15,33 @@
 <body>
     <main>
         <h1>C'est les articles.</h1>
+        <form action="" method="" id="create_post">
+          <div class="create_content">
+            <div>
+              <label for="title_post">Titre : </label>
+              <input type="text" name="title_post" id="title_post" required>
+            </div>
+            <div>
+              <label for="content_post">Contenu : </label>
+              <textarea id="content_post" name="content_post" rows="5" cols="33">
+                It was a dark and stormy night...
+              </textarea>
+            </div>
+          </div>
+          <div class="create_infos">
+            <div>
+              <label for="author_post">Auteur : </label>
+              <input type="text" name="author_post" id="author_post" required>
+            </div>
+            <div>
+              <label for="id_post">Article n° : </label>
+              <input type="number" id="id_post" name="id_post" min="10" value="101">
+            </div>
+            <div>
+              <input type="submit" id="publish_button" value="Publier">
+            </div>
+          </div>
+        </form>
         <section class="articles">
             <article class="feed">
               <div class="article_bandeau">

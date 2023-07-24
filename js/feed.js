@@ -3,16 +3,17 @@ function replaceContent(element, className, newContent) {
     targetDiv.textContent=newContent;
 }
 
-function createPost(clonedPost, jsonObject) {
+function createPost(clonedPost, object) {
   let clone = clonedPost.cloneNode(true);
-  replaceContent(clone, "title", jsonObject.title);
-  replaceContent(clone, "content", jsonObject.body);
-  replaceContent(clone, "author", jsonObject.userId);
-  replaceContent(clone, "post_id", jsonObject.id);
-  clonedPost.after(clone);
+  replaceContent(clone, "title", object.title);
+  replaceContent(clone, "content", object.body);
+  replaceContent(clone, "author", object.userId);
+  replaceContent(clone, "post_id", object.id);
+  clonedPost.parentElement.insertBefore(clone, clonedPost.parentElement.firstChild);
 }
 
 function getLast10Posts(url) {
+
 
     fetch(url).then((response) => {
         if(response.ok) {
@@ -38,6 +39,7 @@ function getLast10Posts(url) {
             for (let i = result.length-10; i < result.length; i++) {
         
                 createPost(firstArticle, result[i]);
+
             }
 
             firstArticle.remove();
@@ -50,15 +52,40 @@ function getLast10Posts(url) {
 }
 
 
+function publishPost() {
+  let firstArticle = document.querySelector('.feed');
+
+  const newArticle = {
+    title: document.getElementById('title_post').value,
+    body: document.getElementById('content_post').value,
+    userId: document.getElementById('author_post').value,
+    id: document.getElementById('id_post').value
+  }
+
+  createPost(firstArticle, newArticle);
+
+  console.log(firstArticle.parentElement.lastElementChild);
+
+  firstArticle.parentElement.lastChild.remove();
+
+}
+
+
+
 window.addEventListener("DOMContentLoaded", (event) => {
 
   let feedUrl = 'https://jsonplaceholder.typicode.com/posts';
   getLast10Posts(feedUrl);
 
 
-  let button = document.querySelector('.getArticles');
-  button.addEventListener('click', () =>getLast10Posts(feedUrl), false);
+  let refreshButton = document.querySelector('.getArticles');
+  refreshButton.addEventListener('click', () =>getLast10Posts(feedUrl), false);
 
+  let submitButton = document.getElementById('publish_button');
+  submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    publishPost();
+  }, false);
 
 });
 
