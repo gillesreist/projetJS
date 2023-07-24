@@ -3,6 +3,15 @@ function replaceContent(element, className, newContent) {
     targetDiv.textContent=newContent;
 }
 
+function createPost(clonedPost, jsonObject) {
+  let clone = clonedPost.cloneNode(true);
+  replaceContent(clone, "title", jsonObject.title);
+  replaceContent(clone, "content", jsonObject.body);
+  replaceContent(clone, "author", jsonObject.userId);
+  replaceContent(clone, "post_id", jsonObject.id);
+  clonedPost.after(clone);
+}
+
 function getLast10Posts(url) {
 
     fetch(url).then((response) => {
@@ -28,12 +37,7 @@ function getLast10Posts(url) {
     
             for (let i = result.length-10; i < result.length; i++) {
         
-                let clone = firstArticle.cloneNode(true);
-                replaceContent(clone, "title", result[i].title);
-                replaceContent(clone, "content", result[i].body);
-                replaceContent(clone, "author", result[i].userId);
-                replaceContent(clone, "post_id", result[i].id);
-                firstArticle.after(clone);
+                createPost(firstArticle, result[i]);
             }
 
             firstArticle.remove();
@@ -45,11 +49,18 @@ function getLast10Posts(url) {
 
 }
 
-let feedUrl = 'https://jsonplaceholder.typicode.com/posts';
 
-window.onload = getLast10Posts(feedUrl);
+window.addEventListener("DOMContentLoaded", (event) => {
+
+  let feedUrl = 'https://jsonplaceholder.typicode.com/posts';
+  getLast10Posts(feedUrl);
 
 
-let button = document.querySelector('.getArticles');
-button.addEventListener('click', getLast10Posts(feedUrl), false);
+  let button = document.querySelector('.getArticles');
+  button.addEventListener('click', () =>getLast10Posts(feedUrl), false);
+
+
+});
+
+
 

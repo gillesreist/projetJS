@@ -1,3 +1,5 @@
+@import url(navbar.css);
+
 .center_text {
     text-align: center;
 }
@@ -5,9 +7,11 @@
 body {
     width: 100%;
     margin: 0;
+    padding: 0;
     font-family: "Montserrat", "Montserrat-fallback", Arial, sans-serif;
     background-color: #070A32;
     color: black;
+    overflow-x: hidden;
 }
 
 header {
@@ -24,8 +28,14 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
+
+.header_left_block {
+    width: 27px;
+    margin: 50px;
+}
+
 
 .footer_container {
     margin: auto;
@@ -60,7 +70,7 @@ footer {
 main {
     background-color: #2B2E63;
     margin: auto;
-    padding: 0px 15px 20px 15px;
+    padding: 0px 0px 20px 0px;
     color: white;
 
 
