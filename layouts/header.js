@@ -10,8 +10,8 @@ header.innerHTML = `
                         <span></span>
                         <div id="menu">
                                 <menu>
-                                        <li><a href="#">accueil</a></li>
-                                        <li><a href="#">galerie</a></li>
+                                        <li><a href="index.html">accueil</a></li>
+                                        <li><a href="galery.html">galerie</a></li>
                                         <li><a href="#">jeux</a></li>
                                 </menu>
                         </div>

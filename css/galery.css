@@ -1,4 +1,26 @@
-.galery {
+.icon_block {
+    text-align: right;
+    margin : 10px;
+}
+
+.icon_block img {
+    margin-right: 5px;
+}
+
+.galery_column div {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.galery_column img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.galery_mosaic {
     display: -ms-flexbox; /* IE10 */
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
@@ -7,8 +29,9 @@
     padding: 0;
   }
   
-  /* Create four equal columns that sits next to each other */
-.galery div {
+
+
+.galery_mosaic div {
     -ms-flex: 100%; /* IE10 */
     flex: 100%;
     max-width: 100%;
@@ -19,16 +42,21 @@
 
 }
 
-.galery img {
+.galery_mosaic img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+
+.icon {
+    width : 30px;
+    height: auto;
+    filter: invert(1);
+}
   
-  /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (min-width : 600px) and (max-width: 768px) {
-    .galery div {
+    .galery_mosaic div {
         -ms-flex: 45%;
       flex: 45%;
       max-width: 45%;
@@ -38,7 +66,11 @@
 
   /* media querie pour écran standard */
 @media screen and (min-width : 768px) and (max-width: 1930px){
-    .galery div {
+    .galery_column div {
+        width: 80%;
+    }
+    
+    .galery_mosaic div {
         -ms-flex: 23%; /* IE10 */
         flex: 23%;
         max-width: 23%;
@@ -48,7 +80,11 @@
 
 /* media querie pour grand écran */
 @media screen and (min-width: 1930px) and (max-width: 2700px) {
-    .galery div {
+    .galery_column div {
+        width: 80%;
+    }
+
+    .galery_mosaic div {
         -ms-flex: 20%; /* IE10 */
         flex: 20%;
         max-width: 20%;
