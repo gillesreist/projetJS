@@ -97,7 +97,7 @@
   
 
 
-.galery_mosaic div {
+.galery_mosaic .pic_div {
     -ms-flex: 100%; /* IE10 */
     flex: 100%;
     max-width: 100%;
@@ -121,7 +121,7 @@
     filter: invert(1);
 }
 
-.user_created :hover {
+.user_created:hover img {
     opacity: 0.8;
 }
 
@@ -130,6 +130,7 @@
     top: 0;
     left: 0;
     background : rgba(0,0,0,0.8);
+    height: 100%;
 
 }
 
@@ -145,11 +146,11 @@
 
   /* media querie pour écran standard */
 @media screen and (min-width : 768px) and (max-width: 1930px){
-    .galery_column div {
+    .galery_column .pic_div  {
         width: 80%;
     }
     
-    .galery_mosaic div {
+    .galery_mosaic .pic_div  {
         -ms-flex: 23%; /* IE10 */
         flex: 23%;
         max-width: 23%;
@@ -159,11 +160,11 @@
 
 /* media querie pour grand écran */
 @media screen and (min-width: 1930px) and (max-width: 2700px) {
-    .galery_column div {
+    .galery_column .pic_div  {
         width: 80%;
     }
 
-    .galery_mosaic div {
+    .galery_mosaic .pic_div  {
         -ms-flex: 20%; /* IE10 */
         flex: 20%;
         max-width: 20%;

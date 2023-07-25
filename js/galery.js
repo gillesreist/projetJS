@@ -2,6 +2,7 @@ function postNewPic () {
     if (validateForm()) {
         let newPicDiv = document.createElement("div");
         newPicDiv.style.position = "relative";
+        newPicDiv.classList.add('pic_div');
         newPicDiv.classList.add('user_created');
         let newPic = document.createElement("img");
         newPic.src = document.getElementById('pic_url').value;
