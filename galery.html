@@ -16,10 +16,26 @@
     <main>
         <h1>C'est la galerie.</h1>
         <div class="icon_block">
-            <img class="icon mosaic" src="img/grid.png">
-            <img class="icon column" src="img/grid.png">
+            <div>
+                <img class="icon add_pic" src="img/add.png">
+                <div class="form-popup" id="myForm">
+                    <form action="" class="form-container">
+                        <h1>Ajouter une image</h1>
+                    
+                        <label for="pic_url"><b>adresse de l'image :</b></label>
+                        <input type="text" placeholder="https://" id="pic_url" name="pic_url" required>
+                        <span class="url_error"></span>
+                        <button type="submit" class="btn post_pic">Ajouter</button>
+                        <button type="button" class="btn cancel">Annuler</button>
+                    </form>
+                </div>
+            </div>
+            <div class="gallery_icons">
+                <img class="icon mosaic" src="img/grid.png">
+                <img class="icon column" src="img/grid.png">
+            </div>
         </div>
-        <div class="galery galery_column"> 
+        <div class="galery galery_mosaic"> 
             <div>
                 <img src="https://www.w3schools.com/w3images/wedding.jpg" >
             </div>

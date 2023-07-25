@@ -1,10 +1,76 @@
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    color: #070A32;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 10px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+  
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+  
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+.url_error {
+    color: red;
+}
+
+
 .icon_block {
-    text-align: right;
-    margin : 10px;
+    display: flex;
 }
 
 .icon_block img {
-    margin-right: 5px;
+    margin: 8px;
+}
+
+.gallery_icons {
+    margin-left: auto;
 }
 
 .galery_column div {
@@ -54,6 +120,19 @@
     height: auto;
     filter: invert(1);
 }
+
+.user_created :hover {
+    opacity: 0.8;
+}
+
+.delete-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background : rgba(0,0,0,0.8);
+
+}
+
   
 @media screen and (min-width : 600px) and (max-width: 768px) {
     .galery_mosaic div {
