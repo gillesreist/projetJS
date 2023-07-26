@@ -10,6 +10,12 @@ function postNewPic () {
         document.querySelector('.galery').appendChild(newPicDiv);
         document.getElementById("myForm").style.display = "none";
         document.querySelector('.url_error').textContent = "";
+
+        newPicDiv.addEventListener('click', (event) => {
+            createDelete(event);          
+        });
+
+        
     } else {
         document.querySelector('.url_error').textContent = "Vous devez rentrer une addresse commençant par http: ou https:";
     }
@@ -49,8 +55,15 @@ function createDelete(event) {
     div.appendChild(div2);
 
     event.target.parentElement.appendChild(div);
-    div.style.height =  event.target.parentElement.style.height;
-    div.style.width =  event.target.parentElement.style.width;
+
+    cancelButton.addEventListener('click', () => {
+        div.remove();
+    });
+
+    deleteButton.addEventListener('click', () => {
+        div.parentElement.remove();
+    });
+
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -85,11 +98,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
         e.preventDefault();
         postNewPic();
     }, false);
-
-    document.addEventListener('click', (event) => {
-        if (event.target.parentElement.classList.contains("user_created")) {
-            createDelete(event);
-        }
-    });
 
 });
