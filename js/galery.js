@@ -12,7 +12,9 @@ function postNewPic () {
         document.querySelector('.url_error').textContent = "";
 
         newPicDiv.addEventListener('click', (event) => {
-            createDelete(event);          
+            if (event.target.parentElement.classList.contains("user_created")) {
+                createDelete(event);          
+            }
         });
 
         
@@ -55,8 +57,10 @@ function createDelete(event) {
     div.appendChild(div2);
 
     event.target.parentElement.appendChild(div);
+    div.parentElement.classList.remove("user_created");
 
     cancelButton.addEventListener('click', () => {
+        div.parentElement.classList.add("user_created");
         div.remove();
     });
 
