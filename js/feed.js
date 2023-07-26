@@ -9,7 +9,12 @@ function createPost(clonedPost, object) {
   replaceContent(clone, "content", object.body);
   replaceContent(clone, "author", object.userId);
   replaceContent(clone, "post_id", object.id);
-  clonedPost.parentElement.insertBefore(clone, clonedPost.parentElement.firstChild);
+
+  if (clone.lastElementChild.classList.contains("delete_article")) {
+    clone.lastElementChild.remove();
+  }
+
+  clonedPost.parentElement.insertBefore(clone, clonedPost);
 }
 
 function getLast10Posts(url) {
@@ -62,7 +67,56 @@ function publishPost() {
   }
 
   createPost(firstArticle, newArticle);
+
   firstArticle.parentElement.lastElementChild.remove();
+
+  firstArticle.parentElement.firstElementChild.classList.add('created_article');
+
+  firstArticle.parentElement.firstElementChild.addEventListener('click', (event) => {
+    if (event.target.classList.contains('created_article')) {
+      deleteArticle(event.target); 
+    } else if (event.target.parentElement.classList.contains('created_article')) {
+      deleteArticle(event.target.parentElement); 
+    }
+});
+
+}
+
+function deleteArticle(article) {
+  let div = document.createElement("div");
+  div.classList.add('delete_article');
+  let p = document.createElement("p");
+  p.textContent = "Voulez-vous supprimer cet article ?";
+  let div2 = document.createElement("div");
+  let deleteButton = document.createElement("button");
+  deleteButton.classList.add('btn'); 
+  deleteButton.classList.add('delete'); 
+  deleteButton.setAttribute('type', 'button');
+  deleteButton.textContent="oui";
+  let cancelButton = document.createElement("button"); 
+  cancelButton.classList.add('btn'); 
+  cancelButton.classList.add('delete_cancel'); 
+  cancelButton.setAttribute('type', 'button');
+  cancelButton.textContent="non";
+
+
+  div2.appendChild(deleteButton);
+  div2.appendChild(cancelButton);
+  div.appendChild(p);
+  div.appendChild(div2);
+
+  article.appendChild(div);
+
+  article.classList.remove('created_article');
+
+  cancelButton.addEventListener('click', () => {
+      div.remove();
+      article.classList.add('created_article');
+  });
+
+  deleteButton.addEventListener('click', () => {
+      article.remove();
+  });
 
 }
 
