@@ -1,8 +1,12 @@
-var burgerMenu = document.getElementById('burger_menu');
+window.addEventListener("DOMContentLoaded", (event) => {
 
-var overlay = document.getElementById('menu');
+  let burgerMenu = document.getElementById('burger_menu');
 
-burgerMenu.addEventListener('click', function() {
-  this.classList.toggle("close");
-  overlay.classList.toggle("overlay");
+  let overlay = document.getElementById('menu');
+
+  burgerMenu.addEventListener('click', function() {
+    this.classList.toggle("close");
+    overlay.classList.toggle("overlay");
+  });
+
 });

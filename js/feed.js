@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 
   let refreshButton = document.querySelector('.getArticles');
-  refreshButton.addEventListener('click', () =>getLast10Posts(feedUrl), false);
+  refreshButton.addEventListener('click', () => getLast10Posts(feedUrl), false);
 
   let submitButton = document.getElementById('publish_button');
   submitButton.addEventListener('click', (e) => {
