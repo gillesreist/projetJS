@@ -12,7 +12,7 @@ header.innerHTML = `
                                 <menu>
                                         <li><a href="index.html">accueil</a></li>
                                         <li><a href="galery.html">galerie</a></li>
-                                        <li><a href="#">jeux</a></li>
+                                        <li><a href="games.html">jeux</a></li>
                                 </menu>
                         </div>
                         
