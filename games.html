@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesupersite</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://kit.fontawesome.com/78dd61dcf5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <h1>C'est les jeux.</h1>
+        <section class="shifumi">
+            <h2>Jan Ken Pon</h2>
+            <div class="prepare_battle">
+                <div class="player">
+                    <label for="player_choice">Choix du joueur :</label>
+                    <select name="player_choice" id="player_choice">
+                        <option value="">--Choisissez une des options--</option>
+                        <option value="rock">Pierre</option>
+                        <option value="paper">Papier</option>
+                        <option value="scissors">Ciseaux</option>
+                        <option value="bomb">Option secrète</option>
+                    </select>
+                    <div class="weapon_container">
+                    </div>
+                    <span>Votre score : </span>
+                    <span class="your_score">
+                        0
+                    </span>
+                </div>
+                <div>
+                    <button class="fight" type="button">
+                        Let's fight !
+                    </button>
+                </div>
+                <div class="player">
+                    <label for="opponent_choice">Choix de l'adversaire :</label>
+                    <select name="opponent_choice" id="opponent_choice">
+                        <option value="">--L'adversaire choisit une des options--</option>
+                        <option value="non">Ce n'est pas à vous de choisir</option>
+                        <option value="non">Ce n'est pas à vous de choisir</option>
+                        <option value="non">Ce n'est pas à vous de choisir</option>
+                        <option value="non">Ce n'est pas à vous de choisir</option>
+                    </select>
+                    <div class="weapon_container">
+                    </div>
+                    <span>Score de l'adversaire : </span>
+                    <span class="opponent_score">
+                        0
+                    </span>
+                </div>
+            </div>
+            <div>
+                <p>C'est qui le gagnant ? c'est ...</p>
+                <p class="result"></p>
+            </div> 
+        </section>
+    </main>
+</body>
+
+<script src="layouts/header.js"></script>
+<script src="layouts/footer.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/games.js"></script>
+<script src="js/shifumi.js"></script>
+
+</html>

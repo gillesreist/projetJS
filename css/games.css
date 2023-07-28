@@ -1,0 +1,49 @@
+.shifumi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prepare_battle {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.player {
+    width: 40%;
+    text-align: center;
+}
+
+.weapon_container {
+    text-align: center;
+    margin: 10px;
+}
+
+.weapon {
+    border: solid;
+    border-color: #070A32;
+    border-radius: 15px;
+}
+
+.result {
+    text-align: center;
+}
+
+.fight {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+.fight:hover {
+    opacity: 1;
+}
