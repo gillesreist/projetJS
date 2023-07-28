@@ -149,7 +149,6 @@
     cursor: pointer;
 }
 
-  
 @media screen and (min-width : 600px) and (max-width: 768px) {
     .galery_mosaic div {
         -ms-flex: 45%;
